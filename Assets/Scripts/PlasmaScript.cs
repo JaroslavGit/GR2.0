@@ -21,9 +21,11 @@ public class PlasmaScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //støet s asteroidem
         if (collision.gameObject.tag == "Asteroid")
         {
             Debug.Log("Kolize");
+
             Destroy(collision.gameObject); //znicim asteroid
             Destroy(this.gameObject); //znicim sebe - kulku
         }    

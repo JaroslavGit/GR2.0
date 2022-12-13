@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   Damage: 20
+  dropChance: 0.5
+  dropPrefab: {fileID: 6162069771893132906, guid: 8d784b45fd0d11548805330ecbb619cd, type: 3}
 --- !u!50 &3733255288629422669
 Rigidbody2D:
   serializedVersion: 4

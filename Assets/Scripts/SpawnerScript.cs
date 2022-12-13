@@ -24,7 +24,7 @@ public class SpawnerScript : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(Aoid, new Vector3(Random.Range(-13,13), 10, 0), Quaternion.identity);
+        Instantiate(Aoid, new Vector3(Random.Range(-11.5f, 11.5f), 10, 0), Quaternion.identity);
     }
 
 }
