@@ -20,10 +20,7 @@ public class CollectorScript : MonoBehaviour
     [SerializeField]
     public AudioSource barelSound;
 
-    private void Start()
-    {
-        barelSound = GetComponent<AudioSource>();  
-    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
