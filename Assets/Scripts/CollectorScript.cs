@@ -17,7 +17,13 @@ public class CollectorScript : MonoBehaviour
     public Text goldText;
     public Text smaragdText;
     public Text diaText;
+    [SerializeField]
+    public AudioSource barelSound;
 
+    private void Start()
+    {
+        barelSound = GetComponent<AudioSource>();  
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -28,6 +34,7 @@ public class CollectorScript : MonoBehaviour
             ironCount++;
             ironText.text = ironCount + "pcs";
             Destroy(collision.gameObject);
+            barelSound.Play();
         }
     }
 

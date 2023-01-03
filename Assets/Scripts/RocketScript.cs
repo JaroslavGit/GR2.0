@@ -10,13 +10,17 @@ public class RocketScript : MonoBehaviour
     public float inputMove;
 
     public GameObject bullet;
+    public AudioSource shotSound;
+    public AudioSource barelSound;
+
     [SerializeField]
     public int Health = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        shotSound = GetComponent<AudioSource>();
+        barelSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +37,8 @@ public class RocketScript : MonoBehaviour
         {
             Debug.Log("HIT!!! --health "+Health);
             Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
-          Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
+     
 
         }
     }
@@ -53,6 +58,7 @@ public class RocketScript : MonoBehaviour
             Debug.Log("Strilim");
             //vytvoøím strelu
             Instantiate(bullet, transform.position, Quaternion.identity);
+            shotSound.Play();
           }
 
     }
