@@ -8,8 +8,10 @@ public class RocketScript : MonoBehaviour
     [SerializeField]
     public float speed = 3.6f;
     public float inputMove;
+    public bool hasSmoke = false;
 
     public GameObject bullet;
+    public GameObject smoke;
     [SerializeField]
     public int Health = 100;
 
@@ -51,9 +53,18 @@ public class RocketScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
           {
             Debug.Log("Strilim");
-            //vytvoøím strelu
+            //vytvoï¿½ï¿½m strelu
             Instantiate(bullet, transform.position, Quaternion.identity);
           }
 
+    }
+
+    void CreateSmoke()
+    {
+      if(Health <= 50 && !hasSmoke)
+      {
+        Instantiate(smoke, transform.position, Quaternion.identity);
+        hasSmoke = true;
+      }
     }
 }
