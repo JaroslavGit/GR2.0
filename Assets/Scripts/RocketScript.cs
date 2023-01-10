@@ -11,12 +11,15 @@ public class RocketScript : MonoBehaviour
 
     public GameObject bullet;
     [SerializeField]
-    public int Health = 100;
+    public int maxHealth = 100;
+    public int Health = 0;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -31,10 +34,10 @@ public class RocketScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Asteroid")
         {
-            Debug.Log("HIT!!! --health "+Health);
-            Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
+          Debug.Log("HIT!!! --health "+Health);
+          Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
           Destroy(collision.gameObject);
-
+          healthBar.SetHealth(Health);
         }
     }
     //poohyb horizontalne
@@ -51,7 +54,7 @@ public class RocketScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
           {
             Debug.Log("Strilim");
-            //vytvoøím strelu
+            //vytvoï¿½ï¿½m strelu
             Instantiate(bullet, transform.position, Quaternion.identity);
           }
 
