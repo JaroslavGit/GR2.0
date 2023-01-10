@@ -15,13 +15,14 @@ public class RocketScript : MonoBehaviour
     public AudioSource barelSound;
 
     [SerializeField]
-    public int Health = 100;
+    public int maxHealth = 100;
+    public int Health = 0;
 
-     [SerializeField]
+    [SerializeField]
      public float fuelAmount;
      public Text fuelMeter;
-    private bool canFly;
-
+     private bool canFly;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,9 @@ public class RocketScript : MonoBehaviour
         barelSound = GetComponent<AudioSource>();
         fuelAmount = 100;
        canFly = true;
-       
+        Health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
     }
 
     // Update is called once per frame
@@ -52,7 +55,7 @@ public class RocketScript : MonoBehaviour
             Debug.Log("HIT!!! --health "+Health);
             Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
             Destroy(collision.gameObject);
-     
+            healthBar.SetHealth(Health);
 
         }
     }

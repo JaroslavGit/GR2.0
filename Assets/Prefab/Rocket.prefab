@@ -4889,7 +4889,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -877963315
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 39982b5f530bdb244bb37cdf0e83fc5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4918,7 +4918,12 @@ MonoBehaviour:
   inputMove: 0
   bullet: {fileID: 3379613241931740072, guid: 7b1c3fe34ee0696499ffbda094a864e5, type: 3}
   shotSound: {fileID: 211523849}
+  barelSound: {fileID: 0}
+  maxHealth: 100
   Health: 100
+  fuelAmount: 0
+  fuelMeter: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!68 &4469454777885116784
 EdgeCollider2D:
   m_ObjectHideFlags: 0
