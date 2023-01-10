@@ -8,14 +8,14 @@ public class CollectorScript : MonoBehaviour
 {
     private int ironCount;
     private int diaCount;
-    private int smaragdCount;
+    //private int smaragdCount;
     private int goldCount;
 
     //pøístup k UI
     [SerializeField]
     public Text ironText;
     public Text goldText;
-    public Text smaragdText;
+  //  public Text smaragdText;
     public Text diaText;
     [SerializeField]
     public AudioSource barelSound;
@@ -24,7 +24,7 @@ public class CollectorScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-    
+
         if (collision.gameObject.tag == "IronDrop")
         {
 
@@ -33,7 +33,18 @@ public class CollectorScript : MonoBehaviour
             Destroy(collision.gameObject);
             barelSound.Play();
         }
+        
+            if (collision.gameObject.tag == "GoldDrop")
+            {
+
+                goldCount++;
+                goldText.text = goldCount + "pcs";
+                Destroy(collision.gameObject);
+                barelSound.Play();
+            }
+        
     }
+
 
 
 }
