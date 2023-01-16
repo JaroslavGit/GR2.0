@@ -33,6 +33,15 @@ public class CollectorScript : MonoBehaviour
             Destroy(collision.gameObject);
             barelSound.Play();
         }
+
+        if (collision.gameObject.tag == "GoldDrop")
+        {
+
+            goldCount++;
+            goldText.text = goldCount + "pcs";
+            Destroy(collision.gameObject);
+            barelSound.Play();
+        }
     }
 
 

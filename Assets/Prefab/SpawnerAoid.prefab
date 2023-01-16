@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Aoid: {fileID: 7478256915524256337, guid: c5ca12b96a5cca440a52ad2853dc684f, type: 3}
-  Rate: 0.001
+  AoidGold: {fileID: 7478256915524256337, guid: bec9f35fe9bd96a4e80df2f7c8a4c1b4, type: 3}

@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpawnerScript : MonoBehaviour
 {
     public GameObject Aoid;
-    public float Rate = 0.01f;
+    public GameObject AoidGold;
+    private float Rate = 0.001f;
+    private float RateGold = 0.0005f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,11 @@ public class SpawnerScript : MonoBehaviour
     {
       if(Random.Range(0f, 1f) < Rate) {
             Spawn();
+        }else
+      if (Random.Range(0f, 1f) < RateGold)
+        {
+            SpawnGold();
         }
-          
 
     }
 
@@ -27,4 +32,8 @@ public class SpawnerScript : MonoBehaviour
         Instantiate(Aoid, new Vector3(Random.Range(-11.5f, 11.5f), 10, 0), Quaternion.identity);
     }
 
+    void SpawnGold()
+    {
+        Instantiate(AoidGold, new Vector3(Random.Range(-11.5f, 11.5f), 10, 0), Quaternion.identity);
+    }
 }
