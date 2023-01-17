@@ -11,7 +11,7 @@ public class CollectorScript : MonoBehaviour
     private int smaragdCount;
     private int goldCount;
 
-    //pøístup k UI
+    //pï¿½ï¿½stup k UI
     [SerializeField]
     public Text ironText;
     public Text goldText;
@@ -41,6 +41,18 @@ public class CollectorScript : MonoBehaviour
             goldText.text = goldCount + "pcs";
             Destroy(collision.gameObject);
             barelSound.Play();
+        }
+
+        if(collision.gameObject.tag == "Energy")
+        {
+            if(GetComponent<RocketScript>().fuelAmount <= 90)
+            {
+                GetComponent<RocketScript>().fuelAmount += 10;
+            }else{
+                GetComponent<RocketScript>().fuelAmount += 100 - GetComponent<RocketScript>().fuelAmount;
+            }
+            
+            Destroy(collision.gameObject);
         }
     }
 
