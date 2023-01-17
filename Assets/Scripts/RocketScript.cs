@@ -13,7 +13,7 @@ public class RocketScript : MonoBehaviour
     public GameObject bullet;
     public AudioSource shotSound;
     public AudioSource barelSound;
-
+    public AudioSource bgSound;
     [SerializeField]
     public int maxHealth = 100;
     public int Health = 0;
@@ -29,8 +29,9 @@ public class RocketScript : MonoBehaviour
     {
         shotSound = GetComponent<AudioSource>();
         barelSound = GetComponent<AudioSource>();
+        bgSound.Play();
         fuelAmount = 100;
-       canFly = true;
+        canFly = true;
         Health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlasmaScript : MonoBehaviour
 {
     public float speed = 4;
+    public GameObject Explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class PlasmaScript : MonoBehaviour
         if (collision.gameObject.tag == "Asteroid")
         {
             Debug.Log("Kolize");
-
+            Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(collision.gameObject); //znicim asteroid
             Destroy(this.gameObject); //znicim sebe - kulku
         }    
