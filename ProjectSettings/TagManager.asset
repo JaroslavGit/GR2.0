@@ -10,6 +10,7 @@ TagManager:
   - Asteroid
   - IronDrop
   - GoldDrop
+  - Energy
   layers:
   - Default
   - TransparentFX
