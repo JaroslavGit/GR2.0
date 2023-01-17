@@ -52,7 +52,7 @@ public class RocketScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Asteroid")
         {
-            Debug.Log("HIT!!! --health "+Health);
+           // Debug.Log("HIT!!! --health "+Health);
             Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
             Destroy(collision.gameObject);
             healthBar.SetHealth(Health);
