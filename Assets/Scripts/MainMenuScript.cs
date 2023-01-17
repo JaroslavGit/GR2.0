@@ -19,4 +19,9 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SwitchScena()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
