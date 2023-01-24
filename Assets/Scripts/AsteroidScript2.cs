@@ -14,7 +14,7 @@ public class AsteroidScript2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = Random.Range(1.2f, 3.1f);  
     }
 
     // Update is called once per frame

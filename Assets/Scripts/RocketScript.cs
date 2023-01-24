@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RocketScript : MonoBehaviour
@@ -34,7 +35,7 @@ public class RocketScript : MonoBehaviour
         canFly = true;
         Health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-
+       // Debug.Log(Screen.width + " x " + transform.position.x);
     }
 
     // Update is called once per frame
@@ -57,16 +58,23 @@ public class RocketScript : MonoBehaviour
             Health -= collision.gameObject.GetComponent<AsteroidScript2>().Damage;
             Destroy(collision.gameObject);
             healthBar.SetHealth(Health);
-
-        }
+            if (Health <= 0)
+            {
+                SceneManager.LoadScene(0);
+            }
+         }
     }
     //poohyb horizontalne
     void MoveH()
     {
-     
-
-        inputMove = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(inputMove, 0f, 0f) * speed * Time.deltaTime;
+        if (transform.position.x <= 11 && transform.position.x >= -11)
+        {
+            inputMove = Input.GetAxisRaw("Horizontal");
+            transform.position += new Vector3(inputMove, 0f, 0f) * speed * Time.deltaTime;
+        }
+        else {
+            transform.position += new Vector3(-1*(inputMove) * speed * Time.deltaTime, 0f, 0f);
+             }
          StartCoroutine(BurnFuel());
         
     }

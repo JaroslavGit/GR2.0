@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f285e0e62d114cae86102fdd47029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   Damage: 20
   dropChance: 0.5
   dropPrefab: {fileID: 6162069771893132906, guid: 8d784b45fd0d11548805330ecbb619cd, type: 3}

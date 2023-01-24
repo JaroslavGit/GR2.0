@@ -47,7 +47,7 @@ public class CollectorScript : MonoBehaviour
         {
             if(GetComponent<RocketScript>().fuelAmount <= 90)
             {
-                GetComponent<RocketScript>().fuelAmount += 10;
+                GetComponent<RocketScript>().fuelAmount += 25;
             }else{
                 GetComponent<RocketScript>().fuelAmount += 100 - GetComponent<RocketScript>().fuelAmount;
             }

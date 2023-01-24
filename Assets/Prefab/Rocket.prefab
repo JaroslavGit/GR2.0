@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33014b4c24650cf4a8be09a200f37452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.6
+  speed: 4.5
   inputMove: 0
   bullet: {fileID: 3379613241931740072, guid: 7b1c3fe34ee0696499ffbda094a864e5, type: 3}
   shotSound: {fileID: 211523849}
